@@ -22,7 +22,8 @@ const [formData, setFormData] = useState({
 })
 
 const handleChange = (e) => {
-  const { name, val}
+  console.log(e.target.value);
+  console.log(e.target.name)
 }
   return (
     <>
@@ -36,8 +37,7 @@ const handleChange = (e) => {
               placeholder='Author'
               className='form-control'
               value={formData.author}
-              onChange={(e) => setFormData({...formData, author: e.target.value })
-              }
+              onChange={handleChange} 
             />
           </div>
           <div className="col">
@@ -48,8 +48,7 @@ const handleChange = (e) => {
               placeholder='title'
               className='form-control'
               value={formData.title}
-              onChange={(e) => setFormData({...formData, title: e.target.value })
-              }
+              onChange={handleChange}
             />
           </div>
           <div className="col">
@@ -60,8 +59,7 @@ const handleChange = (e) => {
               placeholder='body'
               className='form-control'
               value={formData.body}
-              onChange={(e) => setFormData({...formData, body: e.target.value })
-            }
+              onChange={handleChange} 
             />
           </div>
           <div className="col">
@@ -71,6 +69,7 @@ const handleChange = (e) => {
               id="public"
               className='form-check-input'
               checked={formData.public}
+              onChange={handleChange}
             />
             <label htmlFor="">pubblica</label>
           
