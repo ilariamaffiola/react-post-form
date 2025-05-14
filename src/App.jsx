@@ -1,25 +1,32 @@
-import { useState } from 'react'
-import axios from 'axios';
+import { useState } from 'react' //importo l'hook
+import axios from 'axios'; //importo la libreria axios
 
 function App() {
-const [formData, setFormData] = useState({
+const [formData, setFormData] = useState({ //formData è uno stato che rappresenta i dati del form
   author: '',
   title: '',
   body: '',
-  public: false
+  public: false //è il valore booleano per la checkbox
 })
 
-const handleChange = (e) => {
-  const { name, value, type, checked } = e.target;
+const handleChange = (e) => { //funzione che gestisce ogni cambiamento nei campi del form
+  const { name, value, type, checked } = e.target; 
   setFormData({
-    ...formData,
-    [name]: type === 'checkbox' ? checked : value
+    ...formData, //spread operator per mantenere gli altri camnpi invariati 
+    [name]: type === 'checkbox' ? checked : value  //per la checkbox il valore è booleano, per gli altri campi è una stringa
   })
 }
-const handleSubmit = (e) => {
+const handleSubmit = (e) => { //viene eseguita quando premo il bottone invia
   e.preventDefault();
-  axios.post('https://67c5b4f3351c081993fb1ab6.mockapi.io/api/posts', formData).then((res) => {
+  axios.post('https://67c5b4f3351c081993fb1ab6.mockapi.io/api/posts', formData).then((res) => { //i dati vengono inviati all'endpoint
     console.log(res.data);
+    setFormData({ //una volta inviati i dati, il form viene resettato
+      author: '',
+      title: '',
+      body: '',
+      public: false 
+    });
+    alert('Post creato con successo!'); //messaggio di conferma
   })
 }
   return (
