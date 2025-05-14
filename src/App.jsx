@@ -42,15 +42,15 @@ const handleSubmit = (e) => { //viene eseguita quando premo il bottone invia
                 id='author'
                 placeholder='Author'
                 className='form-control'
-                value={formData.author}
-                onChange={handleChange} 
+                value={formData.author} //legato allo stato formData.author
+                onChange={handleChange} //per ogni modifica viene chiamato handleChange
               />
             </div>
             <div className="col mb-3">
               <input
                 type="text"
                 name='title'
-                id='Title'
+                id='title'
                 placeholder='title'
                 className='form-control'
                 value={formData.title}
@@ -59,7 +59,6 @@ const handleSubmit = (e) => { //viene eseguita quando premo il bottone invia
             </div>
             <div className="col mb-3">
               <textarea
-                type="text"
                 name='body'
                 id='body'
                 placeholder='body'
@@ -80,7 +79,7 @@ const handleSubmit = (e) => { //viene eseguita quando premo il bottone invia
               <label htmlFor="">pubblica</label>
             </div>
             <div className="col">
-              <button type='submit' className='btn btn-primary'>
+              <button type='submit' className='btn btn-primary'> {/*quando viene cliccato, viene inviato il form} */}
                 Invia
               </button>
             </div>
@@ -92,3 +91,8 @@ const handleSubmit = (e) => { //viene eseguita quando premo il bottone invia
 }
 
 export default App
+
+//useState gestisce lo stato dei componenti del form
+//handleChange gestisce i cambiamenti nei campi del form
+//handleSubmit invia i dati all'API, resetta il form e mostra un messaggio di conferma
+//axios.post comunica con l'API inviando i dati inseriti dall'utente
