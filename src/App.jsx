@@ -20,39 +20,60 @@ const [formData, setFormData] = useState({
   body: '',
   public: false
 })
+
+const handleChange = (e) => {
+  const { name, val}
+}
   return (
     <>
       <div className="container">
         <div className="row">
           <div className="col">
             <input
-            type="text"
-            placeholder='Author'
-            className='form-control'
-            value={formData.author}
-            onChange={(e) => setFormData({...formData, author: e.target.value })
+              type="text"
+              name='author'
+              id='author'
+              placeholder='Author'
+              className='form-control'
+              value={formData.author}
+              onChange={(e) => setFormData({...formData, author: e.target.value })
+              }
+            />
+          </div>
+          <div className="col">
+            <input
+              type="text"
+              name='title'
+              id='Title'
+              placeholder='title'
+              className='form-control'
+              value={formData.title}
+              onChange={(e) => setFormData({...formData, title: e.target.value })
+              }
+            />
+          </div>
+          <div className="col">
+            <input
+              type="text"
+              name='body'
+              id='body'
+              placeholder='body'
+              className='form-control'
+              value={formData.body}
+              onChange={(e) => setFormData({...formData, body: e.target.value })
             }
             />
           </div>
           <div className="col">
             <input
-            type="text"
-            placeholder='title'
-            className='form-control'
-            value={formData.title}
-            onChange={(e) => setFormData({...formData, title: e.target.value })
-            }
+              type="checkbox"
+              name="public"
+              id="public"
+              className='form-check-input'
+              checked={formData.public}
             />
-          </div>
-          <div className="col">
-            <input
-            type="text"
-            placeholder='body'
-            className='form-control'
-            value={formData.body}
-            onChange={(e) => setFormData({...formData, body: e.target.value })
-            }
-            />
+            <label htmlFor="">pubblica</label>
+          
           </div>
         </div>
       </div>
