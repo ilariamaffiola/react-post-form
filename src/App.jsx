@@ -37,9 +37,10 @@ const handleSubmit = (e) => {
   return (
     <>
       <div className="container">
+        <h1 className='text-center mt-3'>Crea un nuovo post</h1>
         <div className="row">
-          <form className='border rounded bg-light p-4' onSubmit={handleSubmit}> 
-            <div className="col">
+          <form className='border rounded bg-light p-4 mt-4' onSubmit={handleSubmit}> 
+            <div className="col mb-3">
               <input
                 type="text"
                 name='author'
@@ -50,7 +51,7 @@ const handleSubmit = (e) => {
                 onChange={handleChange} 
               />
             </div>
-            <div className="col">
+            <div className="col mb-3">
               <input
                 type="text"
                 name='title'
@@ -61,7 +62,7 @@ const handleSubmit = (e) => {
                 onChange={handleChange}
               />
             </div>
-            <div className="col">
+            <div className="col mb-3">
               <textarea
                 type="text"
                 name='body'
@@ -72,7 +73,7 @@ const handleSubmit = (e) => {
                 onChange={handleChange} 
               />
             </div>
-            <div className="col">
+            <div className="col mb-3">
               <input
                 type="checkbox"
                 name="public"
